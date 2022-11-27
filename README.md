@@ -1,5 +1,5 @@
 # A novel heterophilic graph diffusion convolutional network for identifying cancer driver genes
-*by Tong Zhang, Shao-Wu Zhang\* (zhangsw@nwpu.edu.cn), Mingyu Xie *
+*by Tong Zhang, Shao-Wu Zhang\* (zhangsw@nwpu.edu.cn), Mingyu Xie 
 
 ## Requirements
 
