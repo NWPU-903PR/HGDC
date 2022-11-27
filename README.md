@@ -13,5 +13,8 @@ torch-geometric==2.0.2
 ```
 
 ## Usage
+```shell
 Run main.py script to conduct ten times 5CV on the network of GGNet, PathNet, or PPNet.
+
 Run train_model.py script to obtain predicted scores of genes in the network of GGNet, PathNet, or PPNet, and the predicted scores of genes are saved in "./results/"
+```
