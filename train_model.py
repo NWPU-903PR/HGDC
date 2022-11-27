@@ -120,7 +120,7 @@ def train(model, features, edge_index1, edge_index_ppr, mask, labels, weight):
     optimizer.zero_grad()
     pred = model(features, edge_index1, edge_index_ppr)
     if weight is not None:
-        loss = F.binary_cross_entropy_with_logits(pred[mask], labels[mask].view(-1,1), weight = weight.to(device))  # 设置pos_weight效果反而变差
+        loss = F.binary_cross_entropy_with_logits(pred[mask], labels[mask].view(-1,1), weight = weight.to(device)) 
     else:
         loss = F.binary_cross_entropy_with_logits(pred[mask], labels[mask].view(-1, 1))
     loss.backward()
