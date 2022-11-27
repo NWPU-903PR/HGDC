@@ -17,3 +17,13 @@ def load_net_specific_dataset_ten_5CV(net_name):
     labels = dataset['label']
     k_sets = dataset['split_set']
     return features, edge_index, feature_names, node_names, labels, k_sets
+
+def load_net_specific_dataset(net_name):
+    dataset = load_obj('./data/dataset_%s.pkl' % net_name)
+    features = dataset['feature']
+    edge_index = dataset['edge_index']
+    feature_names = dataset['feature_name']
+    node_names = dataset['node_name']
+    labels = dataset['label']
+    mask = dataset['mask']
+    return features, edge_index, feature_names, node_names, labels, mask
