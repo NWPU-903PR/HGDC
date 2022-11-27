@@ -104,8 +104,8 @@ labels = labels.to(device)
 
 gdc = T.GDC(self_loop_weight=None, normalization_in='sym',
             normalization_out='col',
-            diffusion_kwargs=dict(method='ppr', alpha=args.ppr_alpha , eps = args.ppr_eps), #eps大 边少 #alpha越小，游走路径越长
-            sparsification_kwargs=dict(method='threshold', avg_degree=net_avg_deg_dic[net_name]), exact=True) #avg_degree越小，边越少
+            diffusion_kwargs=dict(method='ppr', alpha=args.ppr_alpha , eps = args.ppr_eps), 
+            sparsification_kwargs=dict(method='threshold', avg_degree=net_avg_deg_dic[net_name]), exact=True) 
 
 data = gdc(data)
 
@@ -122,7 +122,7 @@ def train(model, features, edge_index1, edge_index_ppr, mask, labels, weight):
     optimizer.zero_grad()
     pred = model(features, edge_index1, edge_index_ppr)
     if weight is not None:
-        loss = F.binary_cross_entropy_with_logits(pred[mask], labels[mask].view(-1,1), weight = weight.to(device))  # 设置pos_weight效果反而变差
+        loss = F.binary_cross_entropy_with_logits(pred[mask], labels[mask].view(-1,1), weight = weight.to(device))  
     else:
         loss = F.binary_cross_entropy_with_logits(pred[mask], labels[mask].view(-1, 1))
     loss.backward()
