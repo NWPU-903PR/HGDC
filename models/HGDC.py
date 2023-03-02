@@ -29,9 +29,9 @@ class HGDCNet(torch.nn.Module):
 
         # Attention weights on outputs of different convolutional layers
         self.weight_r0 = torch.nn.Parameter(torch.Tensor([weights[0]]), requires_grad=True)
-        self.weight_r1 = torch.nn.Parameter(torch.Tensor([weights[0]]), requires_grad=True)
-        self.weight_r2 = torch.nn.Parameter(torch.Tensor([weights[0]]), requires_grad=True)
-        self.weight_r3 = torch.nn.Parameter(torch.Tensor([weights[0]]), requires_grad=True)
+        self.weight_r1 = torch.nn.Parameter(torch.Tensor([weights[1]]), requires_grad=True)
+        self.weight_r2 = torch.nn.Parameter(torch.Tensor([weights[2]]), requires_grad=True)
+        self.weight_r3 = torch.nn.Parameter(torch.Tensor([weights[3]]), requires_grad=True)
 
     def forward(self, data):
         x_input = data.x
